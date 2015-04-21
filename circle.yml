@@ -1,0 +1,14 @@
+machine:
+  environment:
+    NODE_ENV: production
+  node:
+    version: 0.10.28
+
+test:
+  pre:
+    - ./bin/lint
+    - ./node_modules/.bin/grunt build
+
+dependencies:
+  override:
+    - NODE_ENV=development && npm install
