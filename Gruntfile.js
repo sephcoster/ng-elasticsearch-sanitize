@@ -23,7 +23,7 @@ module.exports = function (grunt) {
 					process: function (content) {
 						content = "(function () { 'use strict'; var angular = require('angular'); var _ = require('lodash'); module.exports = " +
 					 content + "}());";
-	    return content;
+	 return content;
 					}
 				}
 			}
@@ -55,7 +55,7 @@ module.exports = function (grunt) {
 					preserveComments: false,
 					maxLineLen: 32000,
 					wrap: true,
-					sourceMapName: 'build/ng-elastic-escap.map'
+					sourceMapName: 'build/ng-elastic-escape.map'
 				},
 				files: {
 					'build/ng-elastic-escape.min.js': ['build/ng-elastic-escape.js']

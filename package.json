@@ -1,6 +1,6 @@
 {
   "name": "ng-elasticsearch-sanitize",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Elastic Search Sring Sanitizer for Angular",
   "main": "build/ng-elastic-escape.min.js",
   "scripts": {
