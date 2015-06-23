@@ -3,7 +3,9 @@ angular.module('lx.escapeElastic', []).service('escapeElastic', function () {
     regex;
   return function (query) {
     query = query
-      .replace(/([-!(){}\[\]^*?:\+\/\\])/g, '\\$1') // replace single character special characters
+      .replace(/([-!(){}\[\]^?:\+\/\\])/g, '\\$1') // replace single character special characters
+      // Do not replace asterisk, double quote, or tilde because those are required for Lucene 
+      // QueryStringQuery syntax to function properly.
       .replace(/(\|\|)/g, '\\$1') // replace ||
       .replace(/(\&\&)/g, '\\$1'); // replace &&
     _.map(['AND', 'OR', 'NOT'], function (operator) {
