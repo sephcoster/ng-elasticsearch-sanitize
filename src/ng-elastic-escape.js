@@ -3,7 +3,7 @@ angular.module('lx.escapeElastic', []).service('escapeElastic', function () {
     regex;
   return function (query) {
     query = query
-      .replace(/([-!(){}\[\]^"~*?:\+\/\\])/g, '\\$1') // replace single character special characters
+      .replace(/([-!(){}\[\]^*?:\+\/\\])/g, '\\$1') // replace single character special characters
       .replace(/(\|\|)/g, '\\$1') // replace ||
       .replace(/(\&\&)/g, '\\$1'); // replace &&
     _.map(['AND', 'OR', 'NOT'], function (operator) {
